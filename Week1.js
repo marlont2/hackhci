@@ -10,8 +10,15 @@ function calculate(){
     // Here is the actual calculation
     var pattern = /\d+|\+|\-|\*|\/|\(|\)/g; //The pattern matching
     var tokens = val.match(pattern); //Finds the operators in the value
-    var output = $('#output'); // get the output from input box
-    output.text(JSON.stringify(tokens));
+    try{
+        val = evaluate(tokens);
+        if(tokens.length > 0) {throw "ill-formed expression"}
+        var output = $('#output'); // get the output from input box
+        output.text(JSON.stringify(val));
+        return String(val);    
+    }catch(err){
+        return err;
+    }
 }
     
 function read_operand(tokens){
