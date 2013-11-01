@@ -1,0 +1,46 @@
+
+.rows button{
+ height: 40px;
+ width: 65px;
+ border-radius:10px;
+ margin-bottom: 2px;
+ background-color:rgb(213,213,213);
+ position: relative;
+ left: 30px;
+ font-weight: bold;
+ font-family: Lucida Sans Unicode;
+}
+
+.rows #zero{
+    width:134px;
+    position: relative;
+    top:-21px;
+}
+
+.rows #period{
+    position: relative;
+    top:-21px;
+}
+
+.rows #equal{
+   height: 84px;
+   position:relative;
+   top:-42px;
+
+}
+
+.display {
+    height: 80px;
+    width: 270px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgb(240,251,200);
+    position: relative;
+    left: 30px;
+
+}
+.calculator {
+    background-color: rgb(189,189,189);
+    padding:20px;
+}
