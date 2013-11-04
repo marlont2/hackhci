@@ -11,13 +11,14 @@ function calculate(){
     var pattern = /\d+|\+|\-|\*|\/|\(|\)/g; //The pattern matching
     var tokens = val.match(pattern); //Finds the operators in the value
     try{
+        var output = $('#output'); // get the output from input box
         val = evaluate(tokens);
         if(tokens.length > 0) {throw "ill-formed expression"}
-        var output = $('#output'); // get the output from input box
         output.text(JSON.stringify(val));
         return String(val);    
     }catch(err){
-        return err;
+        console.log(err);
+        output.text("Error, please enter a valid expression");
     }
 }
     
@@ -54,5 +55,3 @@ function evaluate(tokens){
     }    
     return val;
     }
-
-    
