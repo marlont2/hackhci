@@ -6,6 +6,7 @@
  margin-bottom: 2px;
  background-color:rgb(213,213,213);
  position: relative;
+ top: -50px;
  left: 30px;
  font-weight: bold;
  font-family: Lucida Sans Unicode;
@@ -17,18 +18,18 @@
 .rows #zero{
     width:134px;
     position: relative;
-    top:-21px;
+    top:-71px;
 }
 
 .rows #period{
     position: relative;
-    top:-21px;
+    top:-71px;
 }
 
 .rows #equal{
    height: 84px;
    position:relative;
-   top:-42px;
+   top:-92px;
 
 }
 #total {
