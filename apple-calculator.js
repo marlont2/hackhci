@@ -18,7 +18,7 @@ function calculate(){
         return String(val);    
     }catch(err){
         console.log(err);
-        output.text("Error, please enter a valid expression"); //display the error //display the error
+        output.text("Error, please enter a valid expression");  //display the error
     }
 }
     
