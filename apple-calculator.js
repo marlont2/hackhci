@@ -3,9 +3,18 @@ This script will contain all of the necessary functions for a web calculator.
 It contains the calculate function, read_operand function, and the evaluate 
 function.
 */ 
+//Function to clear the display
+function clearout(val){
+    document.getElementById("display").innerHTML=val;
+}
+//Function to place the button presses in the display
+function placer(val){
+    document.getElementById("display").innerHTML+=val;
+}
 
+//Calculates the final result
 function calculate(){
-    var input = $('#expression'); //get the box
+    var input = $('#display'); //get the box
     var val = input.val(); //get the value inside the box
     // Here is the actual calculation
     var pattern = /\d+|\+|\-|\*|\/|\(|\)/g; //The pattern matching
@@ -14,7 +23,7 @@ function calculate(){
         var output = $('#output'); // get the output from input box
         val = evaluate(tokens);
         if(tokens.length > 0) {throw "ill-formed expression"}
-        output.text(JSON.stringify(val)); //display the answer //display the answer
+        output.text(JSON.stringify(val)); //display the answer
         return String(val);    
     }catch(err){
         console.log(err);
@@ -25,11 +34,11 @@ function calculate(){
 function read_operand(tokens){
     try{ 
     var num = tokens.shift(); //num is set to the first element and removed from array
-    var numint = parseInt(num,10); //The variable for an integer in the array
-    if(isNaN(numint)){
+    var numfloat = parseFloat(num,10); //The variable for an integer in the array
+    if(isNaN(numfloat)){
         throw "number expected";
     }else{
-        return numint;
+        return numfloat;
     }
     }
     catch(err){
