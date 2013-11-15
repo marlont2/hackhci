@@ -6,6 +6,7 @@ function.
 //Function to clear the display
 function clearout(val){
     document.getElementById("display").innerHTML=val;
+    document.getElementById("output").innerHTML=val;
 }
 //Function to place the button presses in the display
 function placer(val){
@@ -15,7 +16,7 @@ function placer(val){
 //Calculates the final result
 function calculate(){
     var input = $('#display'); //get the box
-    var val = input.val(); //get the value inside the box
+    var val = input.text(); //get the value inside the box
     // Here is the actual calculation
     var pattern = /\d+|\+|\-|\*|\/|\(|\)/g; //The pattern matching
     var tokens = val.match(pattern); //Finds the operators in the value
@@ -34,11 +35,11 @@ function calculate(){
 function read_operand(tokens){
     try{ 
     var num = tokens.shift(); //num is set to the first element and removed from array
-    var numfloat = parseFloat(num,10); //The variable for an integer in the array
-    if(isNaN(numfloat)){
+    var numint = parseInt(num,10); //The variable for an integer in the array
+    if(isNaN(numint)){
         throw "number expected";
     }else{
-        return numfloat;
+        return numint;
     }
     }
     catch(err){
