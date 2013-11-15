@@ -32,7 +32,7 @@
 
 }
 
-.display {
+#display {
     height: 80px;
     width: 270px;
     margin-top:10px;
@@ -44,7 +44,9 @@
     box-shadow: 0px 3px 10px 0px #F8F8FF;
     border-width: 2px;
     border-color: rgb(36,36,36);
-    
+    text-align:center;
+    font-weight: bold;
+    font-family: Lucida Sans Unicode;
 }
 .calculator {
     background-color: rgb(189,189,189);
